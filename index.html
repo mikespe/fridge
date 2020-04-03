@@ -2,6 +2,13 @@
 <html lang="en">
 
 <head>
+  <style>
+    @media (min-width:1026px) {
+      #submit-button {
+        display:none;
+      }
+    }
+  </style>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -22,6 +29,7 @@
 <input type="date" id="expiration" name="expiration-date"
        value="2020-04-02"
        min="2020-01-01" max="2030-12-31">
+       <input id="submit-button" type="submit">
     </form>
 
     <h2>Items</h2>
