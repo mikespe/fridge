@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Food inventory app</title>
+
+  <link rel="stylesheet" href="css/primitive.css">
+</head>
+
+<body>
+
+  <div class="small-container">
+    <h1>Food Inventory</h1>
+
+    <form>
+      <input id="item" type="text" placeholder="New">
+      <label for="start">Expiration date:</label>
+
+<input type="date" id="expiration" name="expiration-date"
+       value="2020-04-02"
+       min="2020-01-01" max="2030-12-31">
+    </form>
+
+    <h2>Items</h2>
+    <ul></ul>
+
+    <button>Clear All</button>
+  </div>
+
+  <script src="js/scripts.js"></script>
+</body>
+
+</html>
