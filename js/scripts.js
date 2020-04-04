@@ -15,14 +15,26 @@ const liMaker = (text) => {
 }
 
 ul.addEventListener('dblclick', function(e) {
-  console.log(e.target)
+  //console.log(e.target)
   if (e.target.style.textDecorationLine == "line-through") {
     e.target.style.textDecorationLine = "none"
     e.target.style.color = "black"
+    food = {
+      name: clickedvalue = e.target.textContent.split(' ')[0],
+      expdate: e.target.textContent.split(' ')[2]
+    }
+    newitemsArray.push(food)
+    localStorage.setItem('items', JSON.stringify(newitemsArray));
+
   } else {
   e.target.style.textDecorationLine = "line-through"
   e.target.style.color = "red"
-}})
+  clickedvalue = e.target.textContent.split(' ')[0]
+  newitemsArray = itemsArray.filter(function( obj ) { return obj.name !== clickedvalue; });
+  localStorage.setItem('items', JSON.stringify(newitemsArray));
+}
+
+})
 
 form.addEventListener('submit', function (e) {
   e.preventDefault();
@@ -54,7 +66,6 @@ let sortdata = data2.sort(function(a, b) {
   b = new Date(b.expdate);
   return a - b
 });
-console.log(data2)
 
 data.forEach(item => {
   liMaker(item.name + ' - ' + item.expdate);
