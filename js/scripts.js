@@ -10,7 +10,7 @@ var dt = new Date();
 
 dt.getFullYear() + "/" + (dt.getMonth() + 1) + "/" + dt.getDate();
 
-input2.value = dt
+input2.value = dt.toLocaleDateString();
 
 localStorage.setItem('items', JSON.stringify(itemsArray));
 const data = JSON.parse(localStorage.getItem('items'));
