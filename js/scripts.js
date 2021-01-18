@@ -29,7 +29,6 @@ ul.addEventListener('dblclick', function(e) {
     }
     newitemsArray.push(food)
     localStorage.setItem('items', JSON.stringify(newitemsArray));
-    itemsArray = newitemsArray;
 
   } else {
   e.target.style.textDecorationLine = "line-through"
@@ -37,6 +36,7 @@ ul.addEventListener('dblclick', function(e) {
   clickedvalue = e.target.textContent.split(' ')[0]
   newitemsArray = itemsArray.filter(function( obj ) { return obj.name !== clickedvalue; });
   localStorage.setItem('items', JSON.stringify(newitemsArray));
+  itemsArray = newitemsArray;
 }
 
 })
