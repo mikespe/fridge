@@ -10,7 +10,11 @@ var dt = new Date();
 
 dt.getFullYear() + "/" + (dt.getMonth() + 1) + "/" + dt.getDate();
 
-input2.value = dt.toLocaleDateString('en-CA');
+input2.value = dt.toLocaleDateString('en-GB', { // you can skip the first argument
+  year: "numeric",
+  month: "2-digit",
+  day: "2-digit",
+});
 
 localStorage.setItem('items', JSON.stringify(itemsArray));
 const data = JSON.parse(localStorage.getItem('items'));
