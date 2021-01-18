@@ -6,15 +6,8 @@ const input2 = document.getElementById('expiration');
 const expiration = document.getElementById('expiration');
 let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
 
-var dt = new Date();
-
-dt.getFullYear() + "/" + (dt.getMonth() + 1) + "/" + dt.getDate();
-
-input2.value = dt.toLocaleDateString('en-GB', { // you can skip the first argument
-  year: "numeric",
-  month: "2-digit",
-  day: "2-digit",
-});
+var today = new Date();
+expiration.value = today.toISOString().substr(0, 10);
 
 localStorage.setItem('items', JSON.stringify(itemsArray));
 const data = JSON.parse(localStorage.getItem('items'));
