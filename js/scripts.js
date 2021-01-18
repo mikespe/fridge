@@ -2,8 +2,15 @@ const form = document.querySelector('form');
 const ul = document.querySelector('ul');
 const button = document.querySelector('button');
 const input = document.getElementById('item');
+const input2 = document.getElementById('expiration');
 const expiration = document.getElementById('expiration');
 let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
+
+var dt = new Date();
+
+dt.getFullYear() + "/" + (dt.getMonth() + 1) + "/" + dt.getDate();
+
+input2.value = dt
 
 localStorage.setItem('items', JSON.stringify(itemsArray));
 const data = JSON.parse(localStorage.getItem('items'));
