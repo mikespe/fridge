@@ -36,6 +36,7 @@ ul.addEventListener('dblclick', function(e) {
     }
     newitemsArray.push(food)
     localStorage.setItem('items', JSON.stringify(newitemsArray));
+    itemsArray = newitemsArray;
 
   } else {
   e.target.style.textDecorationLine = "line-through"
